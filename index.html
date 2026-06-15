@@ -133,13 +133,15 @@
         }
         
         .greeter-avatar {
-            width: 150px; height: 150px; border-radius: 24px; 
-            margin-bottom: 20px; border: 3px solid var(--primary-hover);
+            /* SIZE IS LOCKED HERE */
+            width: 150px !important; height: 150px !important; border-radius: 24px !important; 
+            margin: 0 auto 20px auto; display: block;
+            border: 3px solid var(--primary-hover);
             box-shadow: 0 15px 30px rgba(124, 58, 237, 0.4);
             padding: 0; 
             animation: bounceAvatar 2.5s infinite ease-in-out;
-            object-fit: cover;
-            object-position: top center;
+            object-fit: cover !important;
+            object-position: top center !important;
         }
         @keyframes bounceAvatar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         
@@ -393,7 +395,10 @@
     <!-- AI AVATAR GREETER MODAL -->
     <div id="avatar-greeter" class="avatar-greeter">
         <div class="greeter-content">
-            <img src="avatar.jpg" alt="Boy Assistant" class="greeter-avatar">
+            
+            <!-- NEW 3D BOY AVATAR WITH SPECS (GLASSES) -->
+            <img src="https://api.dicebear.com/7.x/micah/svg?seed=Oliver&glassesProbability=100&backgroundColor=f1f5f9" alt="Boy Assistant" class="greeter-avatar">
+            
             <h3>Hey there! 👋</h3>
             <p>Welcome! I'm here to guide you. What information are you looking for today?</p>
             <div class="greeter-options">
@@ -613,6 +618,7 @@
             greeter.classList.remove('show');
         }
 
+        // "Thank you" closing feature
         if (closeGreeterBtn) {
             closeGreeterBtn.addEventListener('click', () => {
                 const heading = greeter.querySelector('h3');
@@ -855,4 +861,3 @@
     </script>
 </body>
 </html>
-
